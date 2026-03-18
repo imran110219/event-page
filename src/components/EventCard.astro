@@ -35,9 +35,7 @@ const dateParts = getEventDateParts(event.date);
   </div>
 
   <div class="space-y-4 p-6">
-    <h3 class="font-display text-2xl font-semibold tracking-tight text-surface-900">
-      <a href={`/events/${event.slug}`} class="hover:text-brand-700 transition">{event.title}</a>
-    </h3>
+    <h3 class="font-display text-2xl font-semibold tracking-tight text-surface-900">{event.title}</h3>
 
     <p class="text-sm text-surface-700">{event.shortDescription}</p>
 
@@ -46,22 +44,5 @@ const dateParts = getEventDateParts(event.date);
       <li><span class="font-semibold text-surface-900">Time:</span> {event.time}</li>
       <li><span class="font-semibold text-surface-900">Location:</span> {event.location}</li>
     </ul>
-
-    <div class="flex flex-wrap gap-3 pt-2">
-      <a
-        href={`/events/${event.slug}`}
-        class="rounded-full border border-surface-300 px-4 py-2 text-sm font-semibold text-surface-800 transition hover:border-brand-600 hover:text-brand-700"
-      >
-        Learn More
-      </a>
-      <a
-        href={event.registrationUrl}
-        target="_blank"
-        rel="noreferrer"
-        class="rounded-full bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-800"
-      >
-        Register
-      </a>
-    </div>
   </div>
 </article>

@@ -14,6 +14,3 @@ export const getFeaturedUpcomingEvents = (): EventItem[] =>
   getUpcomingEvents()
     .filter((event) => event.featured)
     .slice(0, 3);
-
-export const getUpcomingEventBySlug = (slug: string): EventItem | undefined =>
-  getUpcomingEvents().find((event) => event.slug === slug);
