@@ -15,8 +15,7 @@ export const events: EventItem[] = [
       "২০০৬ ব্যাচের বন্ধুদের নিয়ে ইফতার মাহফিল-২০২৬ অনুষ্ঠিত হবে। উপস্থিতি নিশ্চিত করতে আয়োজক প্রতিনিধির সাথে যোগাযোগ করুন।",
     featured: false,
     registrationUrl: "tel:+8801918596181",
-    coverImage:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80",
+    coverImage: "/images/iftar.png",
     status: "upcoming",
   },
   {
@@ -33,8 +32,7 @@ export const events: EventItem[] = [
       "২০০৮ ব্যাচের সকল বন্ধুদের নিয়ে ইফতার মাহফিল-২০২৬ আয়োজন করা হয়েছে। অংশগ্রহণ ও সমন্বয়ের জন্য আয়োজক টিমের সাথে যোগাযোগ করুন।",
     featured: false,
     registrationUrl: "tel:+8801787433408",
-    coverImage:
-      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1400&q=80",
+    coverImage: "/images/iftar.png",
     status: "upcoming",
   },
   {
@@ -51,8 +49,7 @@ export const events: EventItem[] = [
       "প্রতি বছরের ন্যায় এই বছরও পবিত্র রমজান মাস উপলক্ষে আমাদের ২০১০ ব্যাচের ইফতার মাহফিল আয়োজন করা হয়েছে। ইফতারের চাঁদা ৩০০ টাকা। চাঁদা পাঠানোর জন্য যোগাযোগ: Imran Tonmoy (+8801794517851, বিকাশ ও রকেট), Ik Saikat (+8801787433408, বিকাশ), Sk Imran (+8801918596181, বিকাশ)।",
     featured: false,
     registrationUrl: "tel:+8801794517851",
-    coverImage:
-      "https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1400&q=80",
+    coverImage: "/images/iftar.png",
     status: "upcoming",
   },
 ];
