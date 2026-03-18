@@ -1,0 +1,44 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<nav id="site-nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <div class="section-shell py-4">
+    <div id="nav-shell" class="rounded-full border border-white/25 bg-white/8 px-4 py-3 backdrop-blur-sm transition-all duration-300 md:px-6">
+      <div class="flex items-center justify-between gap-4">
+        <a data-nav-link href="/" class="font-display text-lg font-semibold text-white">{siteConfig.name}</a>
+
+        <div class="hidden items-center gap-6 text-sm font-medium text-white/90 md:flex">
+          <a data-nav-link href="#events" class="transition hover:text-white">All Events</a>
+          <a data-nav-link href="#about" class="transition hover:text-white">About</a>
+        </div>
+
+        <a href="#events" class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-700 transition hover:bg-brand-50">View Events</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const shell = document.getElementById('nav-shell');
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+
+  const updateNavState = () => {
+    const isScrolled = window.scrollY > 18;
+    if (!shell) return;
+
+    shell.classList.toggle('bg-white/95', isScrolled);
+    shell.classList.toggle('border-surface-200/80', isScrolled);
+    shell.classList.toggle('shadow-soft', isScrolled);
+    shell.classList.toggle('bg-white/8', !isScrolled);
+    shell.classList.toggle('border-white/25', !isScrolled);
+
+    navLinks.forEach((link) => {
+      link.classList.toggle('text-surface-800', isScrolled);
+      link.classList.toggle('text-white', !isScrolled);
+    });
+  };
+
+  window.addEventListener('scroll', updateNavState, { passive: true });
+  updateNavState();
+</script>

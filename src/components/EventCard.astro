@@ -1,0 +1,67 @@
+---
+import type { EventItem } from '../types/event';
+import { getEventDateParts, formatEventDate } from '../utils/date';
+
+interface Props {
+  event: EventItem;
+}
+
+const { event } = Astro.props;
+const dateParts = getEventDateParts(event.date);
+---
+
+<article class:list={[
+  'group relative overflow-hidden rounded-3xl border border-surface-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-card'
+]} data-animate="reveal">
+  <div class="relative h-48 overflow-hidden">
+    <img
+      src={event.coverImage}
+      alt={event.title}
+      loading="lazy"
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+    />
+
+    <div class="absolute left-4 top-4 rounded-xl bg-white p-3 text-center shadow-md">
+      <p class="text-2xl font-bold leading-none text-brand-700">{dateParts.day}</p>
+      <p class="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-surface-600">{dateParts.month}</p>
+    </div>
+
+    <div class="absolute right-4 top-4 flex flex-col items-end gap-2">
+      <span class="rounded-full bg-brand-700/95 px-3 py-1 text-xs font-semibold capitalize text-white">{event.category}</span>
+      {event.limitedSeats && (
+        <span class="rounded-full bg-rose-500 px-3 py-1 text-xs font-semibold text-white">Limited Seats</span>
+      )}
+    </div>
+  </div>
+
+  <div class="space-y-4 p-6">
+    <h3 class="font-display text-2xl font-semibold tracking-tight text-surface-900">
+      <a href={`/events/${event.slug}`} class="hover:text-brand-700 transition">{event.title}</a>
+    </h3>
+
+    <p class="text-sm text-surface-700">{event.shortDescription}</p>
+
+    <ul class="space-y-2 text-sm text-surface-700">
+      <li><span class="font-semibold text-surface-900">Date:</span> {formatEventDate(event.date)}</li>
+      <li><span class="font-semibold text-surface-900">Time:</span> {event.time}</li>
+      <li><span class="font-semibold text-surface-900">Location:</span> {event.location}</li>
+    </ul>
+
+    <div class="flex flex-wrap gap-3 pt-2">
+      <a
+        href={`/events/${event.slug}`}
+        class="rounded-full border border-surface-300 px-4 py-2 text-sm font-semibold text-surface-800 transition hover:border-brand-600 hover:text-brand-700"
+      >
+        Learn More
+      </a>
+      <a
+        href={event.registrationUrl}
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-full bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-800"
+      >
+        Register
+      </a>
+    </div>
+  </div>
+</article>

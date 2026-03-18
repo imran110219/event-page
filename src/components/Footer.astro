@@ -1,0 +1,32 @@
+---
+import { siteConfig } from '../data/site';
+---
+
+<footer class="border-t border-surface-200 bg-white/70 py-10 backdrop-blur">
+  <div class="section-shell flex flex-col gap-8 md:flex-row md:justify-between">
+    <div>
+      <h3 class="font-display text-xl font-semibold text-surface-900">{siteConfig.name}</h3>
+      <p class="mt-2 max-w-md text-sm text-surface-700">Event-driven engagement for communities, institutions, and mission-led teams.</p>
+    </div>
+
+    <div class="grid gap-6 text-sm text-surface-700 md:grid-cols-2">
+      <div>
+        <p class="font-semibold text-surface-900">Address</p>
+        <p class="mt-2 max-w-xs">{siteConfig.address}</p>
+      </div>
+
+      <div>
+        <p class="font-semibold text-surface-900">Social</p>
+        <ul class="mt-2 space-y-1">
+          {siteConfig.social.map((item) => (
+            <li><a href={item.url} target="_blank" rel="noreferrer" class="hover:text-brand-700">{item.name}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-shell mt-8 border-t border-surface-200 pt-4 text-xs text-surface-600">
+    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+  </div>
+</footer>
